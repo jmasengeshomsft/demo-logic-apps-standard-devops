@@ -73,7 +73,7 @@ resource storageAccountContainer 'Microsoft.Storage/storageAccounts/blobServices
 
 resource logicAppStorageAccountRoleAssignment 'Microsoft.Authorization/roleAssignments@2020-10-01-preview' = {
   scope: storageAccount
-  name: guid('rutzsco-logicapp-${roleDefinitionId}-${environment}-ra')
+  name: guid('rutzsco-logicapp-${roleDefinitionId}-${environment}-ra1')
   properties: {
     principalType: 'ServicePrincipal'
     roleDefinitionId: subscriptionResourceId('Microsoft.Authorization/roleDefinitions', roleDefinitionId)
