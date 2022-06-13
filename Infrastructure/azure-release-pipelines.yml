@@ -10,7 +10,7 @@ variables:
   region: 'centralus'
   resourceGroupName: 'demo-logic-apps-standard-devops'
   logicAppName: 'demo-logic-apps-standard-devops'
-  logicAppStorageName: 'jmdemolastr'
+  logicAppStorageName: 'jmdemolastr01'
   templateFile: 'Infrastructure/main.bicep'
 
 pool:
@@ -22,7 +22,7 @@ stages:
     stageName: 'CI'
     environment: 'LA-CI'
     azureSubscription: $(azureSubscription)
-    resourceGroupName: 'rutzsco-demo-logic-app-ci'
+    resourceGroupName: 'demo-logic-apps-standard-dev'
     region: $(region)
     logicAppName: $(logicAppName)
     logicAppStorageName: $(logicAppStorageName)
@@ -32,7 +32,7 @@ stages:
     stageName: 'QA'
     environment: 'LA-QA'
     azureSubscription: $(azureSubscription)
-    resourceGroupName: 'rutzsco-demo-logic-app-qa'
+    resourceGroupName: 'demo-logic-apps-standard-qa'
     region: $(region)
     logicAppName: $(logicAppName)
     logicAppStorageName: $(logicAppStorageName)
