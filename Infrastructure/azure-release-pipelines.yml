@@ -1,9 +1,9 @@
 trigger: none
 
-resources:
-  pipelines:
-  - pipeline: build
-    source: 'Infra - Build'
+# resources:
+#   pipelines:
+#   - pipeline: build
+#     source: 'Infra - Build'
 
 variables:
   azureServiceConnection: 'Terraform'
