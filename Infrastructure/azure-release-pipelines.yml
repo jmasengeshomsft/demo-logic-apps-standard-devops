@@ -1,6 +1,10 @@
-trigger:
-- main
-  
+trigger: none
+
+resources:
+  pipelines:
+  - pipeline: build
+    source: 'Infra - Build'
+
 variables:
   azureServiceConnection: 'Terraform'
   region: 'centralus'
@@ -12,13 +16,24 @@ variables:
 pool:
   vmImage: 'ubuntu-latest'
 
-steps:
-- task: AzureCLI@2
-  inputs:
-    azureSubscription: $(azureServiceConnection)
-    scriptType: bash
-    scriptLocation: inlineScript
-    inlineScript: |
-      az --version
-      az group create --name $(resourceGroupName) --location $(region)
-      az deployment group create --resource-group $(resourceGroupName) --template-file $(templateFile) --parameters logicAppServiceName=$(logicAppName) logicAppStorageAccountName=$(logicAppStorageName) > outputs.json
+stages:
+- template: azure-release-stage-template.yml
+  parameters:
+    stageName: 'CI'
+    environment: 'LA-CI'
+    azureSubscription: $(azureSubscription)
+    resourceGroupName: 'rutzsco-demo-logic-app-ci'
+    region: $(region)
+    logicAppName: $(logicAppName)
+    logicAppStorageName: $(logicAppStorageName)
+    templateFile: $(templateFile)
+- template: azure-release-stage-template.yml
+  parameters:
+    stageName: 'QA'
+    environment: 'LA-QA'
+    azureSubscription: $(azureSubscription)
+    resourceGroupName: 'rutzsco-demo-logic-app-qa'
+    region: $(region)
+    logicAppName: $(logicAppName)
+    logicAppStorageName: $(logicAppStorageName)
+    templateFile: $(templateFile)

@@ -9,6 +9,28 @@ param environment string = 'ci'
 param logAnalyticsWorkspaceName string = 'jm-demo-logic-app'
 
 
+// Integration - Storage Account
+resource storageAccount 'Microsoft.Storage/storageAccounts@2021-04-01' = {
+  name: '${workflowStorageAccountName}${environment}'
+  location: location
+  sku: {
+    name: 'Standard_LRS'
+  }
+  kind: 'StorageV2'
+  properties: {
+    accessTier: 'Hot'
+    allowBlobPublicAccess: true
+    supportsHttpsTrafficOnly: true
+    minimumTlsVersion: 'TLS1_2'
+  }
+}
+
+// Integration - Storage Account Container
+resource storageAccountContainer 'Microsoft.Storage/storageAccounts/blobServices/containers@2021-04-01' = {
+  name: '${storageAccount.name}/default/myblobs'
+  properties: {}
+}
+
 // Log Analytics
 module logAnalytics 'log-analytics.bicep' = {
   name: 'logAnalytics' 
@@ -18,6 +40,7 @@ module logAnalytics 'log-analytics.bicep' = {
   }
 }
 
+// Logic Apps - StorageConnection
 var blobStorageConnectionName = '${workflowStorageAccountName}-blobconnection-${environment}'
 resource blobStorageConnection 'Microsoft.Web/connections@2016-06-01' = {
   name: blobStorageConnectionName
@@ -37,7 +60,7 @@ resource blobStorageConnection 'Microsoft.Web/connections@2016-06-01' = {
 }
 var connectionRuntimeUrl = reference(blobStorageConnection.id, blobStorageConnection.apiVersion, 'full').properties.connectionRuntimeUrl
 
-// Logic Apps Service
+// Logic Apps - Service
 module la 'logic-app-service.bicep' = {
   name: 'la'
   params: {
@@ -50,30 +73,10 @@ module la 'logic-app-service.bicep' = {
   }
 }
 
-// Workflow Storage Account
-resource storageAccount 'Microsoft.Storage/storageAccounts@2021-04-01' = {
-  name: '${workflowStorageAccountName}${environment}'
-  location: location
-  sku: {
-    name: 'Standard_LRS'
-  }
-  kind: 'StorageV2'
-  properties: {
-    accessTier: 'Hot'
-    allowBlobPublicAccess: true
-    supportsHttpsTrafficOnly: true
-    minimumTlsVersion: 'TLS1_2'
-  }
-}
-
-resource storageAccountContainer 'Microsoft.Storage/storageAccounts/blobServices/containers@2021-04-01' = {
-  name: '${storageAccount.name}/default/myblobs'
-  properties: {}
-}
-
+// Logic Apps - RBAC Contributor Access to Ingrgration Storage Account
 resource logicAppStorageAccountRoleAssignment 'Microsoft.Authorization/roleAssignments@2020-10-01-preview' = {
   scope: storageAccount
-  name: guid('rutzsco-logicapp-${roleDefinitionId}-${environment}-ra')
+  name: guid('${logicAppServiceName}-${roleDefinitionId}-${environment}-ra')
   properties: {
     principalType: 'ServicePrincipal'
     roleDefinitionId: subscriptionResourceId('Microsoft.Authorization/roleDefinitions', roleDefinitionId)
@@ -81,6 +84,7 @@ resource logicAppStorageAccountRoleAssignment 'Microsoft.Authorization/roleAssig
   }
 }
 
+// Logic Apps - Storage Connection Access Policy
 resource connectionAccessPolicy 'Microsoft.Web/connections/accessPolicies@2016-06-01' = {
   name: '${blobStorageConnection.name}/${la.name}'
   location: location
