@@ -4,6 +4,9 @@ resources:
   pipelines:
   - pipeline: build
     source: 'infra-build-ci'
+    trigger:
+      branches:
+        - jm-workflows
 
 variables:
   azureServiceConnection: 'Terraform'
