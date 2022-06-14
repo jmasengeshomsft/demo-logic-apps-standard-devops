@@ -1,12 +1,12 @@
 param location string = 'centralus'
 param roleDefinitionId string = 'ba92f5b4-2d11-453d-a403-e96b0029c9fe' //Default as Storage Blob Data Contributor role
 
-param logicAppServiceName string = 'demo-logic-apps-standard-devops'
-param logicAppStorageAccountName string = 'jmdemolastr'
-param workflowStorageAccountName string = 'jmdemolablobs'
-param environment string = 'ci'
+param logicAppServiceName string
+param logicAppStorageAccountName string
+param workflowStorageAccountName string
+param environment string
 
-param logAnalyticsWorkspaceName string = 'jm-demo-logic-app'
+param logAnalyticsWorkspaceName string
 
 
 // Integration - Storage Account
