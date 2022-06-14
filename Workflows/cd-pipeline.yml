@@ -3,7 +3,10 @@ trigger: none
 resources:
   pipelines:
   - pipeline: build
-    source: 'Workflows - Build'
+    source: 'workflows-build-ci'
+    trigger:
+      branches:
+        - jm-workflows
 
 variables:
   azureSubscription: 'Terraform'
