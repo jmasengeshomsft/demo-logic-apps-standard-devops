@@ -17,6 +17,20 @@
       "authentication": {
         "type": "ManagedServiceIdentity"
       }
+    },
+    "azureblob_1": {
+      "api": {
+        "id": "/subscriptions/b79b3641-f295-4473-b807-e858d16b195b/providers/Microsoft.Web/locations/centralus/managedApis/azureblob"
+      },
+      "connection": {
+        "id": "/subscriptions/b79b3641-f295-4473-b807-e858d16b195b/resourceGroups/demo-logic-apps-std-dev/providers/Microsoft.Web/connections/azureblob"
+      },
+      "connectionRuntimeUrl": "https://f10c723a5741a252.07.common.logic-centralus.azure-apihub.net/apim/azureblob/5eac4446801148688e598ecb9a361de5/",
+      "authentication": {
+        "type": "Raw",
+        "scheme": "Key",
+        "parameter": "@appsetting('azureblob_1-connectionKey')"
+      }
     }
   }
 }

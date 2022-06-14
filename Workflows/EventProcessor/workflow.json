@@ -9,17 +9,17 @@
                     "statusCode": 200
                 },
                 "runAfter": {
-                    "Create_blob_(V2)": [
+                    "Create_blob_(V2)_2": [
                         "Succeeded"
                     ]
                 }
             },
-            "Create_blob_(V2)": {
+            "Create_blob_(V2)_2": {
                 "type": "ApiConnection",
                 "inputs": {
                     "host": {
                         "connection": {
-                            "referenceName": "azureblob"
+                            "referenceName": "azureblob_1"
                         }
                     },
                     "method": "post",
@@ -27,7 +27,7 @@
                     "headers": {
                         "ReadFileMetadataFromServer": true
                     },
-                    "path": "/v2/datasets/default/files",
+                    "path": "/v2/datasets/@{encodeURIComponent(encodeURIComponent('c4z3pife3f436strci'))}/files",
                     "queries": {
                         "folderPath": "/myblobs",
                         "name": "@{utcNow()}",
