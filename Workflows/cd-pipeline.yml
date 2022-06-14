@@ -11,7 +11,7 @@ resources:
 variables:
   azureSubscription: 'Terraform'
   azureSubscriptionId: 'b79b3641-f295-4473-b807-e858d16b195b'
-  region: 'eastus'
+  region: 'centralus'
 
 stages:
 - template: cd-stage-template.yml
