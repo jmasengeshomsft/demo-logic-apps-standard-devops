@@ -11,9 +11,6 @@ resources:
 variables:
   azureServiceConnection: 'Terraform'
   region: 'centralus'
-  resourceGroupName: 'demo-logic-apps-standard-devops'
-  logicAppName: 'demo-logic-apps-standard-devops'
-  logicAppStorageName: 'jmdemolastr01'
   templateFile: '$(Pipeline.Workspace)/build/Infrastructure/main.bicep'
 
 pool:
@@ -27,8 +24,6 @@ stages:
     azureSubscription: $(azureSubscription)
     resourceGroupName: 'demo-logic-apps-std-dev'
     region: $(region)
-    logicAppName: $(logicAppName)
-    logicAppStorageName: $(logicAppStorageName)
     templateFile: $(templateFile)
 - template: azure-release-stage-template.yml
   parameters:
@@ -37,6 +32,4 @@ stages:
     azureSubscription: $(azureSubscription)
     resourceGroupName: 'demo-logic-apps-std-qa'
     region: $(region)
-    logicAppName: $(logicAppName)
-    logicAppStorageName: $(logicAppStorageName)
     templateFile: $(templateFile)
