@@ -1,12 +1,12 @@
 param location string = 'centralus'
 param roleDefinitionId string = 'ba92f5b4-2d11-453d-a403-e96b0029c9fe' //Default as Storage Blob Data Contributor role
 
-param logicAppServiceName string
-param logicAppStorageAccountName string
+param logicAppServiceName string = '${uniqueString(resourceGroup().id)}-logic-app'
+param logicAppStorageAccountName string ='${uniqueString(resourceGroup().id)}lastr'
 param workflowStorageAccountName string = '${uniqueString(resourceGroup().id)}str'
 param environment string
-
 param logAnalyticsWorkspaceName string = '${uniqueString(resourceGroup().id)}law'
+
 
 
 // Integration - Storage Account
