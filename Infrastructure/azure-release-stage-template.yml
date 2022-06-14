@@ -9,10 +9,6 @@ parameters:
   default: ''
 - name: region
   default: ''
-- name: logicAppName
-  default: ''
-- name: logicAppStorageName
-  default: ''
 - name: templateFile
   default: ''
 
