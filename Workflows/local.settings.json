@@ -1,7 +1,14 @@
 {
   "IsEncrypted": false,
   "Values": {
-    "AzureWebJobsStorage": "",
-    "WORKFLOWS_SUBSCRIPTION_ID": ""
+    "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+    "FUNCTIONS_WORKER_RUNTIME": "node",
+    "WORKFLOWS_TENANT_ID": "72f988bf-86f1-41af-91ab-2d7cd011db47",
+    "WORKFLOWS_SUBSCRIPTION_ID": "b79b3641-f295-4473-b807-e858d16b195b",
+    "WORKFLOWS_RESOURCE_GROUP_NAME": "demo-logic-apps-std-dev",
+    "Workflows.WebhookRedirectHostUri": "https://1a77-98-52-113-131.ngrok.io",
+    "WORKFLOWS_LOCATION_NAME": "centralus",
+    "WORKFLOWS_MANAGEMENT_BASE_URI": "https://management.azure.com/",
+    "office365-connectionKey": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6ImFDNENWbEJjd3k3ODRUR2JyUlllZWRvcENiUSJ9.eyJ0cyI6IjcyZjk4OGJmLTg2ZjEtNDFhZi05MWFiLTJkN2NkMDExZGI0NyIsImNzIjoibG9naWMtYXBpcy1jZW50cmFsdXMvb2ZmaWNlMzY1LzUzYWE5MzI2Yjc1YTRmMGRhZjFlNGZiYzJhYWY0YjczIiwidiI6Ii05MjIzMzcyMDM2ODU0Nzc1ODA4IiwiZW52aWQiOiJmMTBjNzIzYTU3NDFhMjUyIiwiYXVkIjoiaHR0cHM6Ly9mMTBjNzIzYTU3NDFhMjUyLjA3LmNvbW1vbi5sb2dpYy1jZW50cmFsdXMuYXp1cmUtYXBpaHViLm5ldC9hcGltL29mZmljZTM2NS81M2FhOTMyNmI3NWE0ZjBkYWYxZTRmYmMyYWFmNGI3MyIsIm1hbmFnZW1lbnQiOiJodHRwczovL21hbmFnZW1lbnQubG9naWMtY2VudHJhbHVzLmF6dXJlLWFwaWh1Yi5uZXQvIiwiaXNzIjoiaHR0cHM6Ly9sb2dpYy1hcGlzLWNlbnRyYWx1cy5henVyZS1hcGltLm5ldC8iLCJleHAiOjE2NTU4NTk3MjMsIm5iZiI6MTY1NTI1NDkyM30.b0uLrICl4a3ub30xFP7CCXURf3J4DVBEQfcRNfq4Pga8TkclX0L2U3Ep18TzfcHzDnzJw5XPvnjFpCo4-5AIJ_bw51pv7UFbts1_UzG7sRA1DjamdoUJ6GXbG134EPGA-IOH1d9lADyVfYbJa3u69aJ0Y-qs3hdcRHofgvW8Kn9Q5UOGhm3YKPX3Tf_frV3kdU2gA8FWeiCmokqScQX5_tTdcxx8ZSWeImNHSVefV3OLhjaQvOxm6SXaeJRUjwyhyxWT2maJz1GJkJn56emYDxtkit6iyLnviOYQmYwXKR7D3d0KapCcutzJZWHY17h3qmZh5fXpOEFbR6hnGwYMbQ"
   }
 }
