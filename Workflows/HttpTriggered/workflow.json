@@ -57,6 +57,19 @@
                         "Succeeded"
                     ]
                 }
+            },
+            "Response": {
+                "type": "Response",
+                "kind": "http",
+                "inputs": {
+                    "statusCode": 200,
+                    "body": "@body('Uploads_a_Blob_to_Azure_Storage_2')?['properties']?['creationTime']"
+                },
+                "runAfter": {
+                    "Uploads_a_Blob_to_Azure_Storage_2": [
+                        "Succeeded"
+                    ]
+                }
             }
         },
         "triggers": {
