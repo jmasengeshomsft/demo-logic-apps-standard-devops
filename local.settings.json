@@ -1,13 +1,17 @@
 {
   "IsEncrypted": false,
   "Values": {
-    "AzureWebJobsStorage": "",
+    "AzureWebJobsStorage": "UseDevelopmentStorage=true",
     "FUNCTIONS_WORKER_RUNTIME": "node",
     "WORKFLOWS_TENANT_ID": "72f988bf-86f1-41af-91ab-2d7cd011db47",
     "WORKFLOWS_SUBSCRIPTION_ID": "b79b3641-f295-4473-b807-e858d16b195b",
     "WORKFLOWS_RESOURCE_GROUP_NAME": "demo-logic-apps-std-dev",
+    "Workflows.WebhookRedirectHostUri": " https://b522-98-52-113-131.ngrok.io",
     "WORKFLOWS_LOCATION_NAME": "centralus",
     "WORKFLOWS_MANAGEMENT_BASE_URI": "https://management.azure.com/",
-    "sql_connectionString": "fsdfsdfdf"
+    "azurequeues-connectionKey": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6ImFDNENWbEJjd3k3ODRUR2JyUlllZWRvcENiUSJ9.eyJ0cyI6IjcyZjk4OGJmLTg2ZjEtNDFhZi05MWFiLTJkN2NkMDExZGI0NyIsImNzIjoibG9naWMtYXBpcy1jZW50cmFsdXMvYXp1cmVxdWV1ZXMvYzJlODUxNzE0YjhkNDQ3MWI1NDViYmZkYTIxN2UwZWYiLCJ2IjoiLTkyMjMzNzIwMzY4NTQ3NzU4MDgiLCJlbnZpZCI6ImYxMGM3MjNhNTc0MWEyNTIiLCJhdWQiOiJodHRwczovL2YxMGM3MjNhNTc0MWEyNTIuMDcuY29tbW9uLmxvZ2ljLWNlbnRyYWx1cy5henVyZS1hcGlodWIubmV0L2FwaW0vYXp1cmVxdWV1ZXMvYzJlODUxNzE0YjhkNDQ3MWI1NDViYmZkYTIxN2UwZWYiLCJtYW5hZ2VtZW50IjoiaHR0cHM6Ly9tYW5hZ2VtZW50LmxvZ2ljLWNlbnRyYWx1cy5henVyZS1hcGlodWIubmV0LyIsImlzcyI6Imh0dHBzOi8vbG9naWMtYXBpcy1jZW50cmFsdXMuYXp1cmUtYXBpbS5uZXQvIiwiZXhwIjoxNjU1ODc5NzA4LCJuYmYiOjE2NTUyNzQ5MDh9.SbFe7RP-1754GQ3FKEL8OGMDIGGBZRZs3OsLUt8yA23ERVAdnTHM724vjGULQmVCzQdyS-2XEatDcKA5V5_y7vs_XBhSy51sggFebfLvQEUN-BoYPJa8lR509ffBBVcr55fA9oF80VA3k_5vIwhemwRgtCCOSNNbhpwf2p_FE-pGk1uAInqVSgYczz5QbU8GtA4_4mrPQ8GBkrn85Y5HtEvD_udBci5npB6jsL9IX1S8iPIqMuNfNG8kCnlV0DX_FMFndUBrR_aTJH12dXh2hgFk-OpM6eWeM1QA_8svO_HCeCjCuf-wewID0LZLwpF5Hf3N5QXldLiDEqxiLhHyPQ",
+    "AzureBlob_connectionString": "AccountName=devstoreaccount1;AccountKey=Eby8vdM02xNOcqFlqUwJPLlmEtlCDXJ1OUzFT50uSRZ6IFsuFq2UVErCz4I6tq/K1SZFPTOtr/KBHBeksoGMGw==;DefaultEndpointsProtocol=http;BlobEndpoint=http://127.0.0.1:10000/devstoreaccount1;QueueEndpoint=http://127.0.0.1:10001/devstoreaccount1;TableEndpoint=http://127.0.0.1:10002/devstoreaccount1;",
+    "AzureCosmosDB_connectionString": "AccountEndpoint=https://localhost:8081/;AccountKey=C2y6yDjf5/R+ob0N8A7Cgv30VRDJIWEHLM+4QDU5DE2nQ9nDuVTqobD4b8mGGyPMbIZnqyMsEcaGQy67XIw/Jw=="
+ 
   }
 }

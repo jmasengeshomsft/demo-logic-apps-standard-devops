@@ -1,33 +1,6 @@
 {
   "managedApiConnections": {
-    "office365": {
-      "api": {
-        "id": "/subscriptions/b79b3641-f295-4473-b807-e858d16b195b/providers/Microsoft.Web/locations/centralus/managedApis/office365"
-      },
-      "connection": {
-        "id": "/subscriptions/b79b3641-f295-4473-b807-e858d16b195b/resourceGroups/demo-logic-apps-std-dev/providers/Microsoft.Web/connections/office365-3"
-      },
-      "connectionRuntimeUrl": "https://f10c723a5741a252.07.common.logic-centralus.azure-apihub.net/apim/office365/26cc91d9712842929a8ce1ba79d79835/",
-      "authentication": {
-        "type": "Raw",
-        "scheme": "Key",
-        "parameter": "@appsetting('office365-connectionKey')"
-      }
-    },
-    "office365_1": {
-      "api": {
-        "id": "/subscriptions/b79b3641-f295-4473-b807-e858d16b195b/providers/Microsoft.Web/locations/centralus/managedApis/office365"
-      },
-      "connection": {
-        "id": "/subscriptions/b79b3641-f295-4473-b807-e858d16b195b/resourceGroups/demo-logic-apps-std-dev/providers/Microsoft.Web/connections/office365"
-      },
-      "connectionRuntimeUrl": "https://f10c723a5741a252.07.common.logic-centralus.azure-apihub.net/apim/office365/e880f2e8acb141858f665d8dc33bc3c0/",
-      "authentication": {
-        "type": "Raw",
-        "scheme": "Key",
-        "parameter": "@appsetting('office365_1-connectionKey')"
-      }
-    }
+  
   },
   "serviceProviderConnections": {
     "AzureBlob": {
