@@ -6,7 +6,7 @@ resources:
     source: 'workflows-build-ci'
     trigger:
       branches:
-        - jm-workflows
+        - local-func
 
 variables:
   azureSubscription: 'Terraform'
