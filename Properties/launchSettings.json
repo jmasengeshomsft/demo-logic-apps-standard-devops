@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "demo_logic_apps_standard_devops": {
+      "commandName": "Project",
+      "commandLineArgs": "--port 7172",
+      "launchBrowser": false
+    }
+  }
+}

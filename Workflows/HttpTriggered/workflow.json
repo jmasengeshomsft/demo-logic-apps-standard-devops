@@ -2,17 +2,61 @@
     "definition": {
         "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
         "actions": {
-            "Invoke_a_workflow_in_this_workflow_app": {
-                "type": "Workflow",
+            "Uploads_a_Blob_to_Azure_Storage": {
+                "type": "ServiceProvider",
                 "inputs": {
-                    "host": {
-                        "workflow": {
-                            "id": "eventtrigger"
-                        }
+                    "parameters": {
+                        "containerName": "myotherblobs",
+                        "blobName": "@triggerBody()?['name']",
+                        "content": "@triggerBody()"
                     },
-                    "body": "I was locally triggered"
+                    "serviceProviderConfiguration": {
+                        "connectionName": "AzureBlob",
+                        "operationId": "uploadBlob",
+                        "serviceProviderId": "/serviceProviders/AzureBlob"
+                    }
                 },
                 "runAfter": {}
+            },
+            "Query_items": {
+                "type": "ServiceProvider",
+                "inputs": {
+                    "parameters": {
+                        "databaseId": "SampleDB",
+                        "containerId": "Persons",
+                        "queryText": "SELECT * FROM c"
+                    },
+                    "serviceProviderConfiguration": {
+                        "connectionName": "AzureCosmosDB",
+                        "operationId": "QueryDocuments",
+                        "serviceProviderId": "/serviceProviders/AzureCosmosDB"
+                    }
+                },
+                "runAfter": {
+                    "Uploads_a_Blob_to_Azure_Storage": [
+                        "Succeeded"
+                    ]
+                }
+            },
+            "Uploads_a_Blob_to_Azure_Storage_2": {
+                "type": "ServiceProvider",
+                "inputs": {
+                    "parameters": {
+                        "containerName": "myotherblobs",
+                        "blobName": "@body('Query_items')?['activityId']",
+                        "content": "@body('Query_items')?['items']"
+                    },
+                    "serviceProviderConfiguration": {
+                        "connectionName": "AzureBlob",
+                        "operationId": "uploadBlob",
+                        "serviceProviderId": "/serviceProviders/AzureBlob"
+                    }
+                },
+                "runAfter": {
+                    "Query_items": [
+                        "Succeeded"
+                    ]
+                }
             }
         },
         "triggers": {

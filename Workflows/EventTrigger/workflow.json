@@ -2,21 +2,15 @@
     "definition": {
         "$schema": "https://schema.management.azure.com/providers/Microsoft.Logic/schemas/2016-06-01/workflowdefinition.json#",
         "actions": {
-            "Send_an_email_(V2)": {
-                "type": "ApiConnection",
+            "Invoke_a_workflow_in_this_workflow_app": {
+                "type": "Workflow",
                 "inputs": {
                     "host": {
-                        "connection": {
-                            "referenceName": "office365"
+                        "workflow": {
+                            "id": "httptriggered"
                         }
                     },
-                    "method": "post",
-                    "body": {
-                        "To": "jmasengesho@microsoft.com",
-                        "Subject": "Hi Joe",
-                        "Body": "<p>Hello</p>"
-                    },
-                    "path": "/v2/Mail"
+                    "body": "@triggerBody()"
                 },
                 "runAfter": {}
             }
@@ -25,7 +19,17 @@
             "manual": {
                 "type": "Request",
                 "kind": "Http",
-                "inputs": {}
+                "inputs": {
+                    "schema": {
+                        "type": "object",
+                        "properties": {
+                            "name": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "method": "POST"
+                }
             }
         },
         "contentVersion": "1.0.0.0",
