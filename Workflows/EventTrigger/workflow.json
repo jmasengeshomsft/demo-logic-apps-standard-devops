@@ -13,6 +13,24 @@
                     "body": "@triggerBody()"
                 },
                 "runAfter": {}
+            },
+            "Send_message": {
+                "type": "ServiceProvider",
+                "inputs": {
+                    "parameters": {
+                        "entityName": "erwerwer"
+                    },
+                    "serviceProviderConfiguration": {
+                        "connectionName": "serviceBus",
+                        "operationId": "sendMessage",
+                        "serviceProviderId": "/serviceProviders/serviceBus"
+                    }
+                },
+                "runAfter": {
+                    "Invoke_a_workflow_in_this_workflow_app": [
+                        "Succeeded"
+                    ]
+                }
             }
         },
         "triggers": {

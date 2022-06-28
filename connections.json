@@ -18,6 +18,15 @@
         "id": "/serviceProviders/AzureCosmosDB"
       },
       "displayName": "localcosmosdb"
+    },
+    "serviceBus": {
+      "parameterValues": {
+        "connectionString": "@appsetting('serviceBus_connectionString')"
+      },
+      "serviceProvider": {
+        "id": "/serviceProviders/serviceBus"
+      },
+      "displayName": "sdfgsdfsdfsdf"
     }
   }
 }
