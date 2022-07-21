@@ -1,6 +1,33 @@
 {
   "managedApiConnections": {
-  
+    "servicebus_1": {
+      "api": {
+        "id": "/subscriptions/b79b3641-f295-4473-b807-e858d16b195b/providers/Microsoft.Web/locations/centralus/managedApis/servicebus"
+      },
+      "connection": {
+        "id": "/subscriptions/b79b3641-f295-4473-b807-e858d16b195b/resourceGroups/demo-logic-apps-std-dev/providers/Microsoft.Web/connections/servicebus"
+      },
+      "connectionRuntimeUrl": "https://f10c723a5741a252.07.common.logic-centralus.azure-apihub.net/apim/servicebus/d6518cd3f09e457a9d96660a8e06463b/",
+      "authentication": {
+        "type": "Raw",
+        "scheme": "Key",
+        "parameter": "@appsetting('servicebus_1-connectionKey')"
+      }
+    },
+    "documentdb_1": {
+      "api": {
+        "id": "/subscriptions/b79b3641-f295-4473-b807-e858d16b195b/providers/Microsoft.Web/locations/centralus/managedApis/documentdb"
+      },
+      "connection": {
+        "id": "/subscriptions/b79b3641-f295-4473-b807-e858d16b195b/resourceGroups/demo-logic-apps-std-dev/providers/Microsoft.Web/connections/documentdb-3"
+      },
+      "connectionRuntimeUrl": "https://f10c723a5741a252.07.common.logic-centralus.azure-apihub.net/apim/documentdb/04e5d45e419f4f8ca825e73eae68b89b/",
+      "authentication": {
+        "type": "Raw",
+        "scheme": "Key",
+        "parameter": "@appsetting('documentdb_1-connectionKey')"
+      }
+    }
   },
   "serviceProviderConnections": {
     "AzureBlob": {
@@ -20,6 +47,15 @@
         "id": "/serviceProviders/AzureCosmosDB"
       },
       "displayName": "localcosmosdb"
+    },
+    "serviceBus": {
+      "parameterValues": {
+        "connectionString": "@appsetting('serviceBus_connectionString')"
+      },
+      "serviceProvider": {
+        "id": "/serviceProviders/serviceBus"
+      },
+      "displayName": "sdfgsdfsdfsdf"
     }
   }
 }
