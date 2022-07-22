@@ -10,5 +10,13 @@
   "cosmosdbAccountName": {
     "type": "String",
     "value": "@appsetting('COSMOSDB_ACCOUNT_NAME')"
+  },
+  "cosmosdbDatabaseName": {
+    "type": "String",
+    "value": "@appsetting('COSMOSDB_DATABASE_NAME')"
+  },
+  "cosmosdbContainerName": {
+    "type": "String",
+    "value": "@appsetting('COSMOSDB_CONTAINER_NAME')"
   }
 }

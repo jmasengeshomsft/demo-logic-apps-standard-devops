@@ -12,7 +12,7 @@
                     },
                     "method": "post",
                     "body": "@json(base64ToString(triggerBody()?['ContentData']))",
-                    "path": "/v2/cosmosdb/@{encodeURIComponent(encodeURIComponent(parameters('cosmosdbAccountName')))}/dbs/@{encodeURIComponent('SampleDB')}/colls/@{encodeURIComponent('Persons')}/docs"
+                    "path": "/v2/cosmosdb/@{encodeURIComponent(encodeURIComponent(parameters('cosmosdbAccountName')))}/dbs/@{encodeURIComponent(encodeURIComponent(parameters('cosmosdbDatabaseName')))}/colls/@{encodeURIComponent(encodeURIComponent(parameters('cosmosdbContainerName')))}/docs"
                 },
                 "runAfter": {
                     "Complete_the_message_in_a_queue": [
@@ -25,7 +25,7 @@
                 "inputs": {
                     "host": {
                         "connection": {
-                            "referenceName": "servicebus_1"
+                            "referenceName": "servicebus_2"
                         }
                     },
                     "method": "delete",
@@ -45,7 +45,7 @@
                 "inputs": {
                     "host": {
                         "connection": {
-                            "referenceName": "servicebus_1"
+                            "referenceName": "servicebus_2"
                         }
                     },
                     "method": "get",

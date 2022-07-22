@@ -41,6 +41,20 @@
         "scheme": "Key",
         "parameter": "@appsetting('documentdb_1-connectionKey')"
       }
+    },
+    "servicebus_2": {
+      "api": {
+        "id": "/subscriptions/b79b3641-f295-4473-b807-e858d16b195b/providers/Microsoft.Web/locations/centralus/managedApis/servicebus"
+      },
+      "connection": {
+        "id": "/subscriptions/b79b3641-f295-4473-b807-e858d16b195b/resourceGroups/demo-logic-apps-std-dev/providers/Microsoft.Web/connections/servicebus-2"
+      },
+      "connectionRuntimeUrl": "https://f10c723a5741a252.07.common.logic-centralus.azure-apihub.net/apim/servicebus/82c6889240544ce1b790019f1736c18f/",
+      "authentication": {
+        "type": "Raw",
+        "scheme": "Key",
+        "parameter": "@appsetting('servicebus_2-connectionKey')"
+      }
     }
   },
   "serviceProviderConnections": {
