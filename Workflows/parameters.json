@@ -6,5 +6,9 @@
       "scheme": "Key",
       "parameter": "@appsetting('azureblob-connectionKey')"
     }
+  },
+  "cosmosdbAccountName": {
+    "type": "String",
+    "value": "@appsetting('COSMOSDB_ACCOUNT_NAME')"
   }
 }

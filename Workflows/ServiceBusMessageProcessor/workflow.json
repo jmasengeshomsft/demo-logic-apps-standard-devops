@@ -12,7 +12,7 @@
                     },
                     "method": "post",
                     "body": "@json(base64ToString(triggerBody()?['ContentData']))",
-                    "path": "/v2/cosmosdb/@{encodeURIComponent('leanovated-reddog-rg')}/dbs/@{encodeURIComponent('SampleDB')}/colls/@{encodeURIComponent('Persons')}/docs"
+                    "path": "/v2/cosmosdb/@{encodeURIComponent(encodeURIComponent(parameters('cosmosdbAccountName')))}/dbs/@{encodeURIComponent('SampleDB')}/colls/@{encodeURIComponent('Persons')}/docs"
                 },
                 "runAfter": {
                     "Complete_the_message_in_a_queue": [
