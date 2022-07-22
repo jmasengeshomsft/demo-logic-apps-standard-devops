@@ -31,5 +31,5 @@ stages:
     environment: 'LA-QA'
     azureSubscription: $(azureSubscription)
     resourceGroupName: 'demo-logic-apps-std-qa'
-    region: $(region)
+    region: 'eastus2' #$(region)
     templateFile: $(templateFile)

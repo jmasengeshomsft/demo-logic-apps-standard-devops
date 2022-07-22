@@ -1,6 +1,7 @@
 {
   "version": "2.0",
   "extensionBundle": {
+<<<<<<< Updated upstream
     "id": "Microsoft.Azure.Functions.ExtensionBundle.Workflows",
     "version": "[1.*, 2.0.0)"
   },
@@ -12,3 +13,9 @@
     }
   }
 }
+=======
+    "id": "Microsoft.Azure.Functions.ExtensionBundle",
+    "version": "[2.*, 3.0.0)"
+  }
+}
+>>>>>>> Stashed changes
