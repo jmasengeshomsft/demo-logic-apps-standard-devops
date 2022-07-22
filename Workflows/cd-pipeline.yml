@@ -29,6 +29,6 @@ stages:
     environment: 'LA-QA'
     azureSubscription: $(azureSubscription)
     azureSubscriptionId: $(azureSubscriptionId)
-    resourceGroupName: 'rutzsco-demo-logic-app-qa'
-    region: $(region)
-    logicAppName: 'rutzsco-demo-logic-app-qa'
+    resourceGroupName: 'demo-logic-apps-std-qa'
+    region: 'eastus2' #$(region)
+    logicAppName: '3rt7ivk3m2zwk-logic-app-qa'
