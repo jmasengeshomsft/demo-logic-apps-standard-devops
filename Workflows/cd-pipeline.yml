@@ -22,8 +22,8 @@ stages:
     azureSubscriptionId: $(azureSubscriptionId)
     resourceGroupName: 'jmas-demo-logic-app-ci'
     region: $(region)
-    logicAppName: 'jmas-demo-logic-app'
-    storageAccountName: 'jmnestr002kv'
+    logicAppName: 'jmas-demo-logic-app-ci'
+    storageAccountName: 'jmdemolablobsci'
     triggerFrequency: 'Minute'
 - template: cd-stage-template.yml
   parameters:
